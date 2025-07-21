@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gestión de Pedidos - Tienda Rey</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" />
+<style>
+  body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #121212;
+    color: #f8f9fa;
+  }
+
+  .card {
+    background-color: #1f1f1f;
+    border: 1px solid #333;
+    color: #f8f9fa;
+  }
+
+  .navbar, footer {
+    background-color: #212529;
+  }
+
+  .navbar a, footer {
+    color: #f8f9fa !important;
+  }
+
+  .btn-primary {
+    background-color: #0d6efd;
+  }
+
+  .form-select, .form-control {
+    background-color: #2c2c2c !important;
+    color: #f8f9fa !important;
+    border: 1px solid #444 !important;
+  }
+
+  table.table {
+    border-color: #444 !important;
+    background-color: #1a1a1a !important;
+    color: #f8f9fa !important;
+  }
+
+  table.table thead {
+    background-color: #343a40 !important;
+    color: #f8f9fa !important;
+  }
+
+  table.table tbody tr:nth-child(odd) {
+    background-color: #2a2a2a !important;
+    color: #f8f9fa !important;
+  }
+
+  table.table tbody tr:nth-child(even) {
+    background-color: #1f1f1f !important;
+    color: #f8f9fa !important;
+  }
+
+  table.table td, table.table th {
+    border-color: #444 !important;
+  }
+</style>
+
+
+
+</head>
+<body class="container py-4">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg mb-4 rounded px-3">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <i class="fas fa-crown"></i> Tienda Rey
+      </a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Artículos</a></li>
+          <li class="nav-item"><a class="nav-link" href="clientes.html">Clientes</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="pedidos.html">Pedidos</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <h1 class="mb-4 text-center">Registro de Pedidos</h1>
+
+  <form id="formPedido" class="card p-4 mb-4">
+    <div class="mb-3">
+      <label for="clienteId" class="form-label">Cliente</label>
+      <select id="clienteId" class="form-select" required></select>
+    </div>
+
+    <div class="mb-3">
+      <label for="articuloId" class="form-label">Artículo</label>
+      <select id="articuloId" class="form-select" required></select>
+    </div>
+
+    <div class="mb-3">
+      <label for="cantidad" class="form-label">Cantidad</label>
+      <input type="number" id="cantidad" class="form-control" min="1" value="1" required />
+    </div>
+
+    <div class="mb-3 text-start">
+      <button type="button" id="agregarArticulo" class="btn btn-success">Agregar Artículo</button>
+    </div>
+
+    <hr class="my-4 border-light" />
+
+    <h5>Artículos del Pedido</h5>
+    <div class="table-responsive mb-3">
+      <table id="tablaArticulosSeleccionados" class="table table-bordered align-middle text-light">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Cantidad</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <div class="text-start">
+      <button type="button" onclick="registrarPedido()" class="btn btn-primary">Registrar Pedido</button>
+    </div>
+  </form>
+
+  <h2 class="mb-3">Pedidos Registrados</h2>
+  <div class="table-responsive">
+    <table id="tablaPedidos" class="table table-bordered table-striped table-dark">
+
+
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Cliente</th>
+          <th>Fecha</th>
+          <th>Artículos</th>
+          <th>Cantidades</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <footer class="mt-5 py-3 text-center rounded">
+    <small>Proyecto Tienda Rey - Desarrollado por Abdon Sanchez</small>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="pedidos.js"></script>
+</body>
+</html>
