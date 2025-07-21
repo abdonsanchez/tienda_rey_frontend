@@ -49,30 +49,19 @@ Proyecto organizado en una arquitectura por capas:
 
 ## 🗃 Base de Datos
 
-Nombre: `rey_db`
-
+Nombre: rey_db
 Debés crear la base de datos en tu servidor MySQL:
-
-```sql
 CREATE DATABASE rey_db;
-
-
-Las tablas se generan automáticamente al correr el proyecto, si está habilitado:
-spring.jpa.hibernate.ddl-auto=update
-
+Las tablas se generan automáticamente al correr el proyecto, si está habilitado: spring.jpa.hibernate.ddl-auto=update
 ▶️ Ejecución
 Clonar el repositorio:
-
 git clone https://github.com/tu-usuario/tienda_rey_backend.git
 Configurar src/main/resources/application.properties con tus credenciales de MySQL:
-
 spring.datasource.url=jdbc:mysql://localhost:3306/rey_db
 spring.datasource.username=TU_USUARIO
 spring.datasource.password=TU_CONTRASEÑA
-
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 Ejecutar el proyecto:
-
 mvn spring-boot:run
 O desde tu IDE favorito (IntelliJ, Eclipse, VS Code, etc).
