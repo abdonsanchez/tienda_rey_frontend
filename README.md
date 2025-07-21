@@ -49,35 +49,37 @@ Proyecto organizado en una arquitectura por capas:
 
 ## 🗃 Base de Datos
 
-Nombre: rey_db
+# Nombre: rey_db
 
-Debés crear la base de datos en tu servidor MySQL:
+## Pasos para configurar y ejecutar el proyecto
 
-CREATE DATABASE rey_db;
+1. **Crear la base de datos en tu servidor MySQL:**
 
-Las tablas se generan automáticamente al correr el proyecto, si está habilitado:
+    CREATE DATABASE rey_db;
 
-spring.jpa.hibernate.ddl-auto=update
+2. **Configuración automática de tablas**
 
-▶️ Ejecución
+    Las tablas se generan automáticamente al correr el proyecto, si está habilitado:
 
-Clonar el repositorio:
+    spring.jpa.hibernate.ddl-auto=update
 
-git clone https://github.com/tu-usuario/tienda_rey_backend.git
+3. **▶️ Ejecución**
 
-Configurar src/main/resources/application.properties con tus credenciales de MySQL:
+    - Clonar el repositorio:
 
-spring.datasource.url=jdbc://localhost:3306/rey_db  
-spring.datasource.username=TU_USUARIO  
-spring.datasource.password=TU_CONTRASEÑA  
+        git clone https://github.com/tu-usuario/tienda_rey_backend.git
 
-spring.jpa.hibernate.ddl-auto=update  
-spring.jpa.show-sql=true  
+    - Configurar `src/main/resources/application.properties` con tus credenciales de MySQL:
 
-Ejecutar el proyecto:
+        spring.datasource.url=jdbc:mysql://localhost:3306/rey_db  
+        spring.datasource.username=TU_USUARIO  
+        spring.datasource.password=TU_CONTRASEÑA  
 
-mvn spring-boot:run
+        spring.jpa.hibernate.ddl-auto=update  
+        spring.jpa.show-sql=true  
 
-O desde tu IDE favorito (IntelliJ, Eclipse, VS Code, etc).
+    - Ejecutar el proyecto:
 
-O desde tu IDE favorito (IntelliJ, Eclipse, VS Code, etc).
+        mvn spring-boot:run
+
+    - O desde tu IDE favorito (IntelliJ, Eclipse, VS Code, etc).
