@@ -37,7 +37,12 @@ Frontend del proyecto Tienda Rey, una interfaz web desarrollada con **HTML, Java
 ## 🔗 Conexión con Backend
 
 Este frontend está configurado para conectarse al backend corriendo localmente en:
+`http://localhost:8080`
 
+Si el backend está en otro puerto o dominio, actualizá las variables `API_URL` en los archivos JS correspondientes. Por ejemplo:
+
+```javascript
+const API_URL = 'http://localhost:8080/api/clientes';
 
 ## ▶️ Uso
 
