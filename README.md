@@ -1,95 +1,60 @@
-# Tienda Rey – Backend
+# 🛍️ Tienda Rey – Frontend
 
-Backend del proyecto Tienda Rey, desarrollado con **Java + Spring Boot**. Expone una API RESTful para la gestión de **clientes**, **artículos** y **pedidos**, conectando con una base de datos MySQL.
+Frontend del proyecto Tienda Rey, una interfaz web desarrollada con **HTML, JavaScript Vanilla y Bootstrap**, que se comunica con el backend Spring Boot mediante una API REST.
 
-## 🛠 Tecnologías
+---
 
-- Java 17
-- Spring Boot
-- Spring Data JPA
-- MySQL
-- Maven
+## 🌐 Tecnologías
 
-## 📦 Estructura
+- HTML5  
+- JavaScript (Vanilla)  
+- Bootstrap 5  
+- Fetch API  
 
-Proyecto organizado en una arquitectura por capas:
+---
 
-- `controller/`: controladores REST
-- `service/` y `service/impl/`: lógica de negocio
-- `repository/`: acceso a base de datos (Spring Data JPA)
-- `model/`: entidades JPA
+## 🧾 Funcionalidades
 
-## 📄 Entidades principales
+- Crear, listar, editar y eliminar **clientes**  
+- Crear, listar, editar y eliminar **artículos**  
+- Crear **pedidos** seleccionando un cliente y múltiples artículos con cantidades  
+- Comunicación con backend RESTful en tiempo real  
+- Validación básica de formularios y actualizaciones dinámicas de la interfaz  
 
-- `Cliente`
-- `Articulo`
-- `Pedido`
-- `PedidoArticulo` (entidad intermedia para manejar la relación muchos-a-muchos con cantidades)
+---
 
-## 🔌 Endpoints REST
+## 📁 Estructura del proyecto
 
-- `GET /api/clientes`
-- `POST /api/clientes`
-- `PUT /api/clientes/{id}`
-- `DELETE /api/clientes/{id}`
+- `index.html` → Página de inicio o navegación  
+- `clientes.html` → Gestión de clientes  
+- `articulos.html` → Gestión de artículos  
+- `pedidos.html` → Registro de pedidos  
+- `js/` → Archivos JavaScript para cada módulo (`clientes.js`, `articulos.js`, `pedidos.js`)  
+- `css/` (opcional) → Estilos personalizados (si los agregás)  
 
-- `GET /api/articulos`
-- `POST /api/articulos`
-- `PUT /api/articulos/{id}`
-- `DELETE /api/articulos/{id}`
+---
 
-- `GET /api/pedidos`
-- `POST /api/pedidos`
+## 🔗 Conexión con Backend
 
-## 🧱 Requisitos
+Este frontend está configurado para conectarse al backend corriendo localmente en:
 
-- JDK 17
-- Maven
-- MySQL
 
-## 🗃 Base de Datos
+## ▶️ Uso
 
-### Nombre: rey_db
+Cloná el repositorio:
 
-### Pasos para configurar y ejecutar el proyecto
+```bash
+git clone https://github.com/tu-usuario/tienda_rey_frontend.git
 
-1. **Crear la base de datos en tu servidor MySQL:**
+Abrí los archivos HTML directamente en el navegador  
+(o usá una extensión como Live Server para mejor experiencia de desarrollo).
 
-    ```sql
-    CREATE DATABASE rey_db;
-    ```
+Asegurate de que el backend esté ejecutándose en paralelo para que las funciones funcionen correctamente.
 
-2. **Configuración automática de tablas**
+🗃 Base de Datos  
+La base de datos rey_db es utilizada por el backend.  
+Ver instrucciones de configuración en el repositorio del backend.
 
-    Las tablas se generan automáticamente al correr el proyecto, si está habilitado:
+🧑‍💻 Autor  
+Proyecto realizado por Abdon Sanchez – 2025
 
-    ```properties
-    spring.jpa.hibernate.ddl-auto=update
-    ```
-
-3. **▶️ Ejecución**
-
-    - Clonar el repositorio:
-
-        ```bash
-        git clone https://github.com/tu-usuario/tienda_rey_backend.git
-        ```
-
-    - Configurar `src/main/resources/application.properties` con tus credenciales de MySQL:
-
-        ```properties
-        spring.datasource.url=jdbc:mysql://localhost:3306/rey_db
-        spring.datasource.username=TU_USUARIO
-        spring.datasource.password=TU_CONTRASEÑA
-
-        spring.jpa.hibernate.ddl-auto=update
-        spring.jpa.show-sql=true
-        ```
-
-    - Ejecutar el proyecto:
-
-        ```bash
-        mvn spring-boot:run
-        ```
-
-    - O desde tu IDE favorito (IntelliJ, Eclipse, VS Code, etc).
